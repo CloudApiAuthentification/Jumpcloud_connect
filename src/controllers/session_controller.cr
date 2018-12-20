@@ -4,6 +4,11 @@ class SessionController < ApplicationController
     render("new.slang")
   end
 
+  def new_email
+    user = User.new email: params[:email]
+    render("new_email.slang")
+  end
+
   def create
     user = User.find_by(email: params["email"].to_s)
     if user && user.authenticate(params["password"].to_s)

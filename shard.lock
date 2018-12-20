@@ -28,6 +28,10 @@ shards:
     github: crystal-lang/crystal-db
     version: 0.5.1
 
+  dotenv:
+    github: drum445/dotenv
+    version: 0.3.0
+
   email:
     github: arcage/crystal-email
     version: 0.3.2
@@ -64,6 +68,10 @@ shards:
     github: amberframework/micrate
     version: 0.3.3
 
+  monads:
+    github: alex-lairan/monads
+    commit: 11d9b18c9272183a08e8576a5737605d144256cb
+
   mysql:
     github: crystal-lang/crystal-mysql
     version: 0.5.1
@@ -71,6 +79,10 @@ shards:
   optarg:
     github: mosop/optarg
     version: 0.5.8
+
+  orchestrator:
+    github: alex-lairan/orchestrator-crystal
+    commit: 74e834828e0df7475572682511ce9e1bb07ceff0
 
   pg:
     github: will/crystal-pg

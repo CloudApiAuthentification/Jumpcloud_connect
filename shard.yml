@@ -41,6 +41,13 @@ dependencies:
     github: amberframework/citrine-i18n
     version: 0.3.2
 
+  orchestrator:
+    github: alex-lairan/orchestrator-crystal
+    branch: feature/add_require_optional
+
+  dotenv:
+    github: drum445/dotenv
+
 development_dependencies:
  garnet_spec:
    github: amberframework/garnet-spec

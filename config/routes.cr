@@ -33,6 +33,8 @@ Amber::Server.configure do
     get "/profile/edit", UserController, :edit
     patch "/profile", UserController, :update
     get "/signin", SessionController, :new
+    get "/signin/:email", SessionController, :new_email
+    get "/signup/:email", RegistrationController, :new
     post "/session", SessionController, :create
     get "/signout", SessionController, :delete
     post "/registration", RegistrationController, :create
