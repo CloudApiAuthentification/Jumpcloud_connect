@@ -10,7 +10,7 @@ Amber::Server.configure do
     plug Amber::Pipe::Session.new
     plug Amber::Pipe::Flash.new
     plug Amber::Pipe::CSRF.new
-    plug Authenticate.new
+    # plug Authenticate.new
   end
 
   pipeline :api do
@@ -34,6 +34,7 @@ Amber::Server.configure do
     patch "/profile", UserController, :update
     get "/signin", SessionController, :new
     get "/signin/:email", SessionController, :new_email
+    post "/find_where_you_go", SessionController, :post_new_email
     get "/signup/:email", RegistrationController, :new
     post "/session", SessionController, :create
     get "/signout", SessionController, :delete

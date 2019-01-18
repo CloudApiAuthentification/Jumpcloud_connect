@@ -9,6 +9,25 @@ class SessionController < ApplicationController
     render("new_email.slang")
   end
 
+  def post_new_email
+    exist = User.where(email: params[:email])
+
+    pp exist.count
+
+    if(exist.count > 0)
+      pp exist
+      # Redirect to Signin
+    else
+      if false # Jumpcloud
+        # Redirect to Signup
+      else
+        raise "Connard"
+      end
+    end
+
+    "Coucou"
+  end
+
   def create
     user = User.find_by(email: params["email"].to_s)
     if user && user.authenticate(params["password"].to_s)

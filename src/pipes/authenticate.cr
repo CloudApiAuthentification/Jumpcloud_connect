@@ -3,7 +3,7 @@ class HTTP::Server::Context
 end
 
 class Authenticate < Amber::Pipe::Base
-  PUBLIC_PATHS = ["/signin", "/session", "/registration"]
+  PUBLIC_PATHS = ["/signin", "/session", "/registration", "/find_where_you_go"]
 
   def call(context)
     user_id = context.session["user_id"]?

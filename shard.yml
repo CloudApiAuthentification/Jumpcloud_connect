@@ -43,7 +43,6 @@ dependencies:
 
   orchestrator:
     github: alex-lairan/orchestrator-crystal
-    branch: master
 
   dotenv:
     github: drum445/dotenv

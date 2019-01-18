@@ -1,7 +1,7 @@
 class UserController < ApplicationController
-  before_action do
-    all { redirect_signed_out_user }
-  end
+  # before_action do
+  #   all { redirect_signed_out_user }
+  # end
 
   def show
     render("show.slang") if (user = current_user)
