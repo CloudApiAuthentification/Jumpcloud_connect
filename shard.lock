@@ -2,11 +2,15 @@ version: 1.0
 shards:
   amber:
     github: amberframework/amber
-    version: 0.10.0
+    version: 0.11.3
 
   amber_router:
     github: amberframework/amber-router
-    version: 0.2.0
+    version: 0.2.1
+
+  ameba:
+    github: veelenga/ameba
+    version: 0.9.0
 
   callback:
     github: mosop/callback
@@ -34,7 +38,11 @@ shards:
 
   email:
     github: arcage/crystal-email
-    version: 0.3.2
+    version: 0.3.3
+
+  exception_page:
+    github: crystal-loot/exception_page
+    version: 0.1.2
 
   garnet_spec:
     github: amberframework/garnet-spec
@@ -54,7 +62,7 @@ shards:
 
   jasper_helpers:
     github: amberframework/jasper-helpers
-    version: 0.2.3
+    version: 0.2.4
 
   kilt:
     github: jeromegn/kilt
@@ -82,7 +90,7 @@ shards:
 
   orchestrator:
     github: alex-lairan/orchestrator-crystal
-    commit: 74e834828e0df7475572682511ce9e1bb07ceff0
+    commit: be157d20ad5916ec42ac05cc114a0c0510d29b57
 
   pg:
     github: will/crystal-pg
@@ -94,7 +102,7 @@ shards:
 
   quartz_mailer:
     github: amberframework/quartz-mailer
-    version: 0.5.2
+    version: 0.5.3
 
   redis:
     github: stefanwille/crystal-redis
@@ -122,5 +130,5 @@ shards:
 
   teeplate:
     github: mosop/teeplate
-    version: 0.6.1
+    version: 0.7.0
 
