@@ -1,7 +1,0 @@
-githubs:
-  - host: github.com
-    user: CloudApiAuthentification
-    env: ACCESS_TOKEN
-    symbol: github
-    api_base: https://api.github.com
-    raw_base: https://raw.githubusercontent.com
