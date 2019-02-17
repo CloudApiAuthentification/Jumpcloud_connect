@@ -2,7 +2,7 @@ require "crypto/bcrypt/password"
 
 class User < Granite::Base
   include Crypto
-  adapter sqlite
+  adapter pg
   table_name users
 
   primary id : Int64

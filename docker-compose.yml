@@ -27,13 +27,27 @@ services:
     links:
       - db
 
-  db:
-    image: jumpcloud_connect
-    command: 'bash -c "ls > /dev/null"'
+  danger:
+    image: hosteddanger/hosteddanger
+    environment: 
+      ACCESS_TOKEN: bfc8d6190fa315e4a62506145eda3338bb7a7320
+    ports:
+      - 80:80
     volumes:
-    - db:/app/local/db
+      - ./config.yaml:/opt/hd/config.yaml
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: project_ci_development
+    volumes:
+      - db:/var/lib/postgresql/data
+
 
 volumes:
   db:
   nodes:
   shards:
+
