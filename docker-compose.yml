@@ -6,7 +6,7 @@ services:
     image: jumpcloud_connect
     command: amber watch
     environment:
-      DATABASE_URL: sqlite3:./db/jumpcloud_connect_development.db
+      DATABASE_URL: postgres://admin:password@db:5432/lairan_website_development
     ports:
       - 3000:3000
     links:
@@ -21,7 +21,7 @@ services:
     image: jumpcloud_connect
     command: bash -c 'amber db migrate seed'
     environment:
-      DATABASE_URL: sqlite3:./db/jumpcloud_connect_development.db
+      DATABASE_URL: postgres://admin:password@db:5432/lairan_website_development
     volumes:
       - .:/app
     links:
