@@ -1,1 +1,8 @@
 language: crystal
+
+env:
+  - DOTENV=.env.travis
+
+script:
+  - crystal spec
+  - bin/ameba
