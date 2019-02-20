@@ -1,10 +1,11 @@
 class RegistrationController < ApplicationController
   def new
-    user = User.new
+    user = User.new(email: params[:email])
     render("new.slang")
   end
 
   def create
+    pp params
     user = User.new(registration_params.validate!)
     user.password = params["password"].to_s
 

@@ -5,10 +5,10 @@ h1 Sign Up
   - user.errors.each do |error|
     li = error.to_s
 
-form action="/registration" method="post"
+form action="/session" method="post"
   == csrf_tag
   .form-group
-    input.form-control type="email" name="email" placeholder="Email"
+    input.form-control type="email" name="email" placeholder="Email" value=#user.email
   .form-group
     input.form-control type="password" name="password" placeholder="Password"
   button.btn.btn-primary.btn-sm type="submit"

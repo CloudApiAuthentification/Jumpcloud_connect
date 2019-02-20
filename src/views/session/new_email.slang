@@ -8,10 +8,10 @@ h1 Sign In
 form action="/registration" method="post"
   == csrf_tag
   .form-group
-    input.form-control type="email" name="email" placeholder="Email" disabled="true" value=#user.email
+    input.form-control type="email" name="email" placeholder="Email" readonly="true" value=#user.email
   .form-group
     input.form-control type="password" name="password" placeholder="Password"
   button.btn.btn-primary.btn-sm type="submit"
-    | Register
+    | LogIn
 <hr/>
-== link_to("Already have an account?", "/signin")
+/ == link_to("Already have an account?", "/signin")

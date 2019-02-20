@@ -7,7 +7,7 @@ class Authenticate < Amber::Pipe::Base
 
   def call(context)
     user_id = context.session["user_id"]?
-    if user = User.find user_id
+    if user_id && user = User.find user_id
       context.current_user = user
       call_next(context)
     else
