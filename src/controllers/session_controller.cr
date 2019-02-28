@@ -12,18 +12,13 @@ class SessionController < ApplicationController
   def post_new_email
     exist = User.where(email: params[:email])
 
-    pp "Is exist"
-    pp exist.count
-
     if exist.count > 0
-      pp exist
       redirect_to(location: "/signin/#{params[:email]}")
     else
-      pp params[:email]
-      pp headers = HTTP::Headers{ "x-api-key" => "ae65506bafe3e3c8a0e4c8e0fe2cb4599a952839" }
-      pp body = %Q({"filter": [{"email": "#{params[:email]}"}]})
-      pp response = HTTP::Client.post("https://console.jumpcloud.com/api/search/systemusers", headers: headers, body: body)
-      pp res_body = JSON.parse(response.body)
+      headers = HTTP::Headers{ "x-api-key" => "ae65506bafe3e3c8a0e4c8e0fe2cb4599a952839" }
+      body = %Q({"filter": [{"email": "#{params[:email]}"}]})
+      response = HTTP::Client.post("https://console.jumpcloud.com/api/search/systemusers", headers: headers, body: body)
+      res_body = JSON.parse(response.body)
       if res_body["totalCount"].as_i > 0
         # Redirect to Signup
         redirect_to(location: "/signup/#{params[:email]}")
