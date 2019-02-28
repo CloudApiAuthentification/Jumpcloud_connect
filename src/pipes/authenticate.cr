@@ -7,7 +7,8 @@ class Authenticate < Amber::Pipe::Base
 
   def call(context)
     user_id = context.session["user_id"]?
-    if user_id && user = User.find user_id
+
+    if user_id && (user = User.find user_id)
       context.current_user = user
       call_next(context)
     else
@@ -19,7 +20,8 @@ class Authenticate < Amber::Pipe::Base
   end
 
   private def public_path?(path)
-    PUBLIC_PATHS.includes?(path) || path.starts_with?("/signin")
+    pp "path #{path}"
+    PUBLIC_PATHS.includes?(path) || path.starts_with?("/signin") || path.starts_with?("/signup")
 
     # Different strategies can be used to determine if a path is public
     # Example, if /admin/* paths are the only private paths

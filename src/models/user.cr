@@ -8,6 +8,7 @@ class User < Granite::Base
   primary id : Int64
   field email : String
   field hashed_password : String
+  field external_id : String
 
   validate :email, "is required", ->(user : User) do
     (email = user.email) ? !email.empty? : false

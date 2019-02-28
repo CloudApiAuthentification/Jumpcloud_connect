@@ -10,7 +10,7 @@ Amber::Server.configure do
     plug Amber::Pipe::Session.new
     plug Amber::Pipe::Flash.new
     plug Amber::Pipe::CSRF.new
-    # plug Authenticate.new
+    plug Authenticate.new
   end
 
   pipeline :api do
@@ -29,6 +29,9 @@ Amber::Server.configure do
   end
 
   routes :web do
+    resources "/user_groups", UserGroupController
+    resources "/articles", ArticleController
+    resources "/groups", GroupController
     get "/profile", UserController, :show
     get "/profile/edit", UserController, :edit
     patch "/profile", UserController, :update

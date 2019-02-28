@@ -1,11 +1,10 @@
 class RegistrationController < ApplicationController
   def new
-    user = User.new(email: params[:email])
+    user = User.new(email: params[:email], external_id: params[:external_id])
     render("new.slang")
   end
 
   def create
-    pp params
     user = User.new(registration_params.validate!)
     user.password = params["password"].to_s
 
@@ -22,6 +21,7 @@ class RegistrationController < ApplicationController
   private def registration_params
     params.validation do
       required(:email) { |f| !f.nil? }
+      required(:external_id) { |f| !f.nil? }
       required(:password) { |f| !f.nil? }
     end
   end

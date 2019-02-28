@@ -5,7 +5,7 @@ h1 Sign In
   - user.errors.each do |error|
     li = error.to_s
 
-form action="/registration" method="post"
+form action="/session" method="post"
   == csrf_tag
   .form-group
     input.form-control type="email" name="email" placeholder="Email" readonly="true" value=#user.email

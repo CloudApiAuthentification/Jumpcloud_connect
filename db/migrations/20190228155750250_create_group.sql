@@ -1,13 +1,12 @@
 -- +micrate Up
-CREATE TABLE users (
+CREATE TABLE groups (
   id INTEGER NOT NULL PRIMARY KEY,
-  email VARCHAR,
-  hashed_password VARCHAR,
-  external_id VARCHAR
+  name VARCHAR,
+  external_id VARCHAR,
   created_at TIMESTAMP,
   updated_at TIMESTAMP
 );
 
 
 -- +micrate Down
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS groups;
