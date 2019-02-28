@@ -6,7 +6,7 @@ services:
     image: jumpcloud_connect
     command: amber watch
     environment:
-      DATABASE_URL: sqlite3:./db/jumpcloud_connect_development.db
+      DATABASE_URL: postgres://admin:password@db:5432/project_ci_development
     ports:
       - 3000:3000
     links:
@@ -21,19 +21,32 @@ services:
     image: jumpcloud_connect
     command: bash -c 'amber db migrate seed'
     environment:
-      DATABASE_URL: sqlite3:./db/jumpcloud_connect_development.db
+      DATABASE_URL: postgres://admin:password@db:5432/project_ci_development
     volumes:
       - .:/app
     links:
       - db
 
   db:
-    image: jumpcloud_connect
-    command: 'bash -c "ls > /dev/null"'
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: project_ci_development
     volumes:
-    - db:/app/local/db
+      - db:/var/lib/postgresql/data
+
+  mailCatcher:
+    image: schickling/mailcatcher
+    environment: 
+      MAILCATCHER_PORT_1025_TCP_ADDR: 1025
+    ports:
+      - 1025:25
+      - 1080:1080
+
 
 volumes:
   db:
   nodes:
   shards:
+

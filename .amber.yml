@@ -1,4 +1,4 @@
 type: app
-database: sqlite
+database: pg
 language: slang
 model: granite
