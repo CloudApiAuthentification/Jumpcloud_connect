@@ -10,3 +10,9 @@ a class="nav-item #{active}" href="/" Home
   - active = context.request.path == "/signin" ? "active" : ""
   a class="nav-item nav-item-auth nav-item-auth-signin #{active}" href="/signin"
     | Sign In
+- active = context.request.path == "/groups" ? "active" : ""
+a class="nav-item #{active}" href="/groups" Groups
+- active = context.request.path == "/articles" ? "active" : ""
+a class="nav-item #{active}" href="/articles" Articles
+- active = context.request.path == "/user_groups" ? "active" : ""
+a class="nav-item #{active}" href="/user_groups" User Groups

@@ -8,7 +8,9 @@ h1 Sign Up
 form action="/registration" method="post"
   == csrf_tag
   .form-group
-    input.form-control type="email" name="email" placeholder="Email"
+    input.form-control type="email" name="email" placeholder="Email" value=#user.email
+  .form-group.d-none
+    input.form-control type="text" name="external_id" value=#user.external_id
   .form-group
     input.form-control type="password" name="password" placeholder="Password"
   button.btn.btn-primary.btn-sm type="submit"

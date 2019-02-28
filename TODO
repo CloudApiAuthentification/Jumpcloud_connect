@@ -1,0 +1,14 @@
+- Redirect user to (1) /signin/:email or (2) /signup/:email 
+  if email in database
+    1
+  else
+    2
+  end
+
+- List group of user
+- Local Content management with Group
+  SELECT * FROM contents WHERE group IN [user.group];
+
+
+QUERY Group USER
+https://console.jumpcloud.com/api/v2/users/5c0176c857423d0c7e330262/memberof

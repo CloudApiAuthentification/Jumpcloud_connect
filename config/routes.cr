@@ -29,11 +29,15 @@ Amber::Server.configure do
   end
 
   routes :web do
+    resources "/user_groups", UserGroupController
+    resources "/articles", ArticleController
+    resources "/groups", GroupController
     get "/profile", UserController, :show
     get "/profile/edit", UserController, :edit
     patch "/profile", UserController, :update
     get "/signin", SessionController, :new
     get "/signin/:email", SessionController, :new_email
+    post "/find_where_you_go", SessionController, :post_new_email
     get "/signup/:email", RegistrationController, :new
     post "/session", SessionController, :create
     get "/signout", SessionController, :delete
