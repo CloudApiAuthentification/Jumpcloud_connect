@@ -20,7 +20,6 @@ class Authenticate < Amber::Pipe::Base
   end
 
   private def public_path?(path)
-    pp "path #{path}"
     PUBLIC_PATHS.includes?(path) || path.starts_with?("/signin") || path.starts_with?("/signup")
 
     # Different strategies can be used to determine if a path is public

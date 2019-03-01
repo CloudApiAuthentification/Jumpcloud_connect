@@ -12,8 +12,6 @@ class SessionController < ApplicationController
   def post_new_email
     exist = User.where(email: params[:email])
 
-    pp "exist ? #{exist.count}"
-
     if exist.count > 0
       redirect_to(location: "/signin/#{params[:email]}")
     else
@@ -21,8 +19,7 @@ class SessionController < ApplicationController
       body = %Q({"filter": [{"email": "#{params[:email]}"}]})
       response = HTTP::Client.post("https://console.jumpcloud.com/api/search/systemusers", headers: headers, body: body)
       res_body = JSON.parse(response.body)
-      pp res_body
-      pp params[:email]
+
       if res_body["totalCount"].as_i > 0
         # Redirect to Signup
         redirect_to(location: "/signup/#{params[:email]}?external_id=#{res_body["results"][0]["_id"]}")

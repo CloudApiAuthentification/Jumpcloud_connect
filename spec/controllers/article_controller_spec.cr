@@ -34,14 +34,6 @@ end
 describe ArticleControllerTest do
   subject = ArticleControllerTest.new
 
-  it "renders article index template" do
-    Article.clear
-    response = subject.get "/articles"
-
-    response.status_code.should eq(200)
-    response.body.should contain("articles")
-  end
-
   it "renders article show template" do
     Article.clear
     model = create_article

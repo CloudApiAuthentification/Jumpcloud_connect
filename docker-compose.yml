@@ -3,7 +3,7 @@ version: '2'
 services:
   app:
     build: .
-    image: jumpcloud_connect
+    # image: jumpcloud_connect
     command: amber watch
     environment:
       DATABASE_URL: sqlite3:./db/jumpcloud_connect_development.db
@@ -18,7 +18,7 @@ services:
 
   migrate:
     build: .
-    image: jumpcloud_connect
+    # image: jumpcloud_connect
     command: bash -c 'amber db migrate seed'
     environment:
       DATABASE_URL: sqlite3:./db/jumpcloud_connect_development.db
@@ -28,7 +28,8 @@ services:
       - db
 
   db:
-    image: jumpcloud_connect
+    build: .
+    # image: jumpcloud_connect
     command: 'bash -c "ls > /dev/null"'
     volumes:
     - db:/app/local/db
