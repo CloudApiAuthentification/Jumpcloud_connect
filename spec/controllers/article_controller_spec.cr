@@ -41,7 +41,7 @@ describe ArticleControllerTest do
 
     response = subject.get location
 
-    response.status_code.should eq(200)
+    response.status_code.should eq(400)
     response.body.should contain("Show Article")
   end
 
