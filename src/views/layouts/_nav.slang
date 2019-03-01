@@ -14,5 +14,3 @@ a class="nav-item #{active}" href="/" Home
 a class="nav-item #{active}" href="/groups" Groups
 - active = context.request.path == "/articles" ? "active" : ""
 a class="nav-item #{active}" href="/articles" Articles
-- active = context.request.path == "/user_groups" ? "active" : ""
-a class="nav-item #{active}" href="/user_groups" User Groups
